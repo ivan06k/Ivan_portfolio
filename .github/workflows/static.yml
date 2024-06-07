@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: hsl(0, 0%, 100%);
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2em 0;
+        }
+        .video-gallery, .illustration-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
+        .video-item, .illustration-item {
+            width: 300px;
+            margin: 0.5em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .video-item:hover, .illustration-item:hover {
+            transform: scale(1.05);
+        }
+        .separator {
+            width: 100%;
+            height: 4px;
+            background-color: #2c3e50;
+            margin: 2em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>portfolio</h1>
+    </header>
+    <div class="content">
+        <section class="video-gallery">
+            <h2>video:</h2>
+            <div class="video-item" onclick="playVideo('кофе.mov')">
+                <img src="Снимок экрана 2024-06-06 в 10.45.32.png" alt="Видео 1" width="300">
+            </div>
+            <div class="video-item" onclick="playVideo('айрапетов .mov')">
+                <img src="Снимок экрана 2024-06-06 в 10.43.02.png" alt="Видео 2" width="300">
+            </div>
+            <div class="video-item" onclick="playVideo('david goggins.mov')">
+                <img src="Снимок экрана 2024-06-06 в 11.00.29.png" alt="Видео 3" width="300">
+            </div>
+            <div class="video-item" onclick="playVideo('0604 (1).mov')">
+                <img src="Снимок экрана 2024-06-06 в 10.43.53.png" alt="Видео 4" width="300">
+            </div>
+            <!-- Добавьте больше видео по мере необходимости -->
+        </section>
+
+        <!-- Контейнер для видеоплеера -->
+        <div id="video-player-container" style="width: 90%; max-width: 1200px; text-align: center; margin: 2em 0;"></div>
+
+        <!-- Разделительная линия -->
+        <div class="separator"></div>
+
+        <section class="illustration-gallery">
+            <h2>illustrations:</h2>
+            <div class="illustration-item">
+                <img src="узор из линий.png" alt="Иллюстрация 1" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="открытка 8 марта.png" alt="Иллюстрация 2" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="я (здоровье).png" alt="Иллюстрация 3" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="happy birthday.png" alt="Иллюстрация 4" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="узор из линий 2.0.png" alt="Иллюстрация 5" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="stay focused.png" alt="Иллюстрация 6" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="постер №1.png" alt="Иллюстрация 7" width="300">
+            </div>
+            <div class="illustration-item">
+                <img src="fashion.png" alt="Иллюстрация 8" width="300">
+            </div>
+            <!-- Добавьте больше иллюстраций по мере необходимости -->
+        </section>
+    </div>
+
+    <script>
+        function playVideo(videoSrc, thumbnailSrc) {
+            const videoPlayerContainer = document.getElementById('video-player-container');
+            videoPlayerContainer.innerHTML = '';
+
+            const videoPlayer = document.createElement('video');
+            videoPlayer.src = videoSrc;
+            videoPlayer.controls = true;
+            videoPlayer.style.width = '90%';
+            videoPlayer.style.maxWidth = '600px';
+            videoPlayer.style.margin = '2em auto';
+            videoPlayer.autoplay = true;
+
+            videoPlayerContainer.appendChild(videoPlayer);
+        }
+    </script>
+</body>
+</html>
